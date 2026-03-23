@@ -1,0 +1,65 @@
+{
+  "name": "@wyre-technology/veeam-cli",
+  "version": "1.0.0",
+  "description": "Unified CLI for all Veeam Backup products — VBR, VONE, VSPC, VRO, and K10",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "veeam": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest run",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "author": "WYRE Technology",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wyre-technology/veeam-cli.git"
+  },
+  "homepage": "https://github.com/wyre-technology/veeam-cli",
+  "bugs": {
+    "url": "https://github.com/wyre-technology/veeam-cli/issues"
+  },
+  "keywords": [
+    "veeam",
+    "backup",
+    "cli",
+    "vbr",
+    "vone",
+    "vspc",
+    "vro",
+    "kasten",
+    "k10",
+    "disaster-recovery",
+    "data-protection"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@kubernetes/client-node": "^1.0.0",
+    "chalk": "^4.1.2",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "@eslint/js": "^9.0.0",
+    "typescript-eslint": "^8.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
