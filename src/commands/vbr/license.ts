@@ -59,11 +59,7 @@ export function registerVbrLicenseCommand(parent: Command, program: Command): vo
         const data = (await response.json()) as LicenseData;
 
         const workloads = data.instanceLicenseSummary?.workload || [];
-        if (format === "json") {
-          printOutput(format, workloads);
-        } else {
-          printOutput(format, workloads as Record<string, unknown>[]);
-        }
+        printOutput(format, workloads as Record<string, unknown>[]);
       } catch (error) {
         printError(error instanceof Error ? error.message : String(error));
         process.exit(1);

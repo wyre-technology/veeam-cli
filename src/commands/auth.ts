@@ -125,9 +125,9 @@ export function registerAuthCommand(program: Command): void {
         printOutput(format, products.length === 1 ? results[0] : results);
       } else {
         for (const r of results) {
-          if (r.authenticated) {
+          if (r.authenticated && "host" in r) {
             printSuccess(
-              `${r.product.toUpperCase()}: authenticated to ${(r as { host: string }).host} as ${(r as { username: string }).username}`,
+              `${r.product.toUpperCase()}: authenticated to ${r.host} as ${r.username}`,
             );
           } else {
             printError(`${r.product.toUpperCase()}: not authenticated`);
